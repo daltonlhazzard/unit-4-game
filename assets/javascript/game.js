@@ -1,21 +1,22 @@
-
 var win=0;
 var loose=0;
-var blue=Math.floor(Math.random() * 12) + 1; console.log
+var blue=Math.floor(Math.random() * 12) + 1;
 var green=Math.floor(Math.random() * 12) + 1;
 var red=Math.floor(Math.random() * 12) + 1;
 var white=Math.floor(Math.random() * 12) + 1;
 var rn=Math.floor(Math.random() * 102) + 19;
+$("#random").text(rn);
 var score=0;
 
+//removed new "var" statements
 function reset() {
-    var blue=Math.floor(Math.random() * 12) + 1;
-    var green=Math.floor(Math.random() * 12) + 1;
-    var red=Math.floor(Math.random() * 12) + 1;
-    var white=Math.floor(Math.random() * 12) + 1;
-    var rn=Math.floor(Math.random() * 102) + 19;
+    blue=Math.floor(Math.random() * 12) + 1;
+    green=Math.floor(Math.random() * 12) + 1;
+    red=Math.floor(Math.random() * 12) + 1;
+    white=Math.floor(Math.random() * 12) + 1;
+    rn=Math.floor(Math.random() * 102) + 19;
     $("#random").text(rn);
-    var score=0;
+    score=0;
     $("#totalScore").text(score);
 }  
 
@@ -28,53 +29,55 @@ function wins() {
 
 function losses() {
     alert("You Lost!!");
-    reset();
     loose++;
     $("#loose").text(loose);
+    reset();
 }
 
 
 $("#crysBlue").click(function() {
-    totalScore = totalScore + blue;
+    score = score + blue;
     $("#totalScore").text(score);
     if (score===rn) {
         wins();
     }
     else if (score>rn) {
-        looses();
+        losses();
     }
 });
 
 $("#crysRed").click(function() {
-    totalScore = totalScore + blue;
+    score = score + red;
     $("#totalScore").text(score);
     if (score===rn) {
         wins();
     }
     else if (score>rn) {
-        looses();
+        losses();
     }
 });
 
 $("#crysGreen").click(function() {
-    totalScore = totalScore + blue;
+    score = score + green;
     $("#totalScore").text(score);
     if (score===rn) {
         wins();
     }
     else if (score>rn) {
-        looses();
+        losses();
     }
 });
 
 $("#crysWhite").click(function() {
-    totalScore = totalScore + blue;
+    score = score + white;
     $("#totalScore").text(score);
     if (score===rn) {
         wins();
     }
     else if (score>rn) {
-        looses();
+        losses();
     }
 });
+
+
 
